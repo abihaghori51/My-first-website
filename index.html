@@ -412,6 +412,41 @@
         transform: translateY(0);
     }
 }
+        /* ANIMATED NAVBAR */
+
+nav a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: #c026d3;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #7b2cbf;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* LOGO ANIMATION */
+
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.08);
+}
     </style>
 
 </head>
