@@ -240,6 +240,387 @@
                 font-size: 32px;
             }
         }
+   <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My First Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf7ff;
+            color: #222;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #7b2cbf;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #7b2cbf;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(circle at top left, #eadcff, transparent 40%),
+                radial-gradient(circle at bottom right, #ffdff5, transparent 40%),
+                #faf7ff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #5a189a;
+        }
+
+        .hero h1 span {
+            color: #c026d3;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 32px;
+            background: #7b2cbf;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #5a189a;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            margin-left: 10px;
+            background: white;
+            color: #7b2cbf;
+            border: 2px solid #7b2cbf;
+        }
+
+        .btn-outline:hover {
+            background: #7b2cbf;
+            color: white;
+        }
+
+        /* ABOUT */
+        .section {
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 40px;
+            color: #5a189a;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            color: #666;
+            max-width: 650px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+        }
+
+        /* CARDS */
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 280px;
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #7b2cbf;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: linear-gradient(135deg, #7b2cbf, #c026d3);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .contact h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .contact .btn {
+            background: white;
+            color: #7b2cbf;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #24102f;
+            color: white;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .btn {
+                padding: 13px 24px;
+            }
+
+            .section h2,
+            .contact h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">My Website ✨</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Welcome to
+                <span>My Website</span> ✨
+            </h1>
+
+            <p>
+                This is my first professional-looking website
+                created with HTML and CSS.
+            </p>
+
+            <a href="#about" class="btn">
+                Explore Website
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Contact Me
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+
+        <h2>About My Website</h2>
+
+        <p class="section-intro">
+            Welcome! I'm learning how to build websites from scratch.
+            This website is hosted using GitHub Pages and will grow
+            as I learn more about web development.
+        </p>
+
+    </section>
+
+
+    <!-- FEATURES SECTION -->
+    <section class="section" id="features">
+
+        <h2>What You'll Find Here</h2>
+
+        <p class="section-intro">
+            Here are some of the things I can add to my website.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🎨</div>
+
+                <h3>Beautiful Design</h3>
+
+                <p>
+                    Modern colors, clean layouts and
+                    attractive sections.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">📱</div>
+
+                <h3>Mobile Friendly</h3>
+
+                <p>
+                    The website can automatically adjust
+                    to phones, tablets and computers.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">⚡</div>
+
+                <h3>Fast & Simple</h3>
+
+                <p>
+                    A lightweight website made using
+                    simple HTML and CSS.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+
+        <h2>Let's Connect! 💜</h2>
+
+        <p>
+            Thanks for visiting my first website.
+        </p>
+
+        <a href="mailto:hello@example.com" class="btn">
+            Send Me an Email
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 My Website. Made with ❤️
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
     </style>
 </head>
 
