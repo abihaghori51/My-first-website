@@ -329,7 +329,38 @@
                 height: 250px;
             }
         }
+/* FULLSCREEN IMAGE */
 
+.gallery-item img {
+    cursor: pointer;
+}
+
+.fullscreen-viewer {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.fullscreen-viewer img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.close-fullscreen {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+}
     </style>
 
 </head>
@@ -459,32 +490,51 @@
 
 
     <!-- IMAGE GALLERY -->
+<!-- IMAGE GALLERY -->
 
-    <section class="section" id="gallery">
+<section class="section" id="gallery">
 
-        <h2>My Gallery ✨</h2>
+    <h2>My Gallery ✨</h2>
 
-        <p class="section-intro">
-            A beautiful collection of images for my website.
-        </p>
+    <p class="section-intro">
+        A beautiful collection of images for my website.
+    </p>
 
-        <div class="gallery">
+    <div class="gallery">
 
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80" alt="Modern workspace">
-            </div>
-
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80" alt="Modern architecture">
-            </div>
-
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=800&q=80" alt="Creative workspace">
-            </div>
-
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80"
+                 alt="Modern workspace"
+                 onclick="openFullscreen(this)">
         </div>
 
-    </section>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80"
+                 alt="Modern architecture"
+                 onclick="openFullscreen(this)">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=800&q=80"
+                 alt="Creative workspace"
+                 onclick="openFullscreen(this)">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FULLSCREEN IMAGE -->
+
+<div id="fullscreenViewer" class="fullscreen-viewer" onclick="closeFullscreen()">
+
+    <span class="close-fullscreen">&times;</span>
+
+    <img id="fullscreenImage" src="" alt="Fullscreen image">
+
+</div>
+    
 
 
     <!-- CONTACT -->
@@ -536,7 +586,17 @@
             }
 
         });
+function openFullscreen(image) {
+    const viewer = document.getElementById("fullscreenViewer");
+    const fullscreenImage = document.getElementById("fullscreenImage");
 
+    fullscreenImage.src = image.src;
+    viewer.style.display = "flex";
+}
+
+function closeFullscreen() {
+    document.getElementById("fullscreenViewer").style.display = "none";
+}
     </script>
 
 </body>
