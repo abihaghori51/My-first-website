@@ -1019,7 +1019,59 @@
             }
 
         }
+/* =========================
+   SOCIAL MEDIA BUTTONS
+========================= */
 
+.social-links {
+    max-width: 650px;
+    margin: 30px auto 0;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.social-btn {
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    background: #f1ece3;
+    color: #5d4936;
+
+    border: 1px solid #ded5c8;
+    border-radius: 25px;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-4px);
+
+    background: #8a6a4a;
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(80, 60, 40, 0.2);
+}
+
+/* Dark Mode */
+
+body.dark .social-btn {
+    background: #302923;
+    border-color: #4a3e34;
+    color: #ead8c2;
+}
+
+body.dark .social-btn:hover {
+    background: #8a6a4a;
+    color: white;
+}
     </style>
 
 </head>
@@ -1366,7 +1418,21 @@
             </button>
 
         </form>
+<div class="social-links">
 
+    <a href="#" target="_blank" class="social-btn">
+        📸 Instagram
+    </a>
+
+    <a href="#" target="_blank" class="social-btn">
+        ▶️ YouTube
+    </a>
+
+    <a href="#" target="_blank" class="social-btn">
+        🎵 TikTok
+    </a>
+
+</div>
     </section>
 
 
