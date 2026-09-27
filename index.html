@@ -758,7 +758,77 @@
             }
 
         }
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
 
+#menuButton {
+    display: none;
+
+    border: 1px solid #d8d0c4;
+    background: #f1ece3;
+    color: #333;
+
+    padding: 9px 12px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-size: 22px;
+
+    transition: 0.25s ease;
+}
+
+#menuButton:hover {
+    background: #e7dfd3;
+}
+
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media (max-width: 750px) {
+
+    #menuButton {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+
+        padding-top: 10px;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+}
+
+
+/* DARK MODE MENU BUTTON */
+
+.dark-mode #menuButton {
+    background: #2c2c2c;
+    color: #f1f1f1;
+    border-color: #444;
+}
+
+.dark-mode #menuButton:hover {
+    background: #383838;
+}
     </style>
 
 </head>
@@ -780,7 +850,9 @@
         <button id="themeButton">
             🌙 Dark Mode
         </button>
-
+<button id="menuButton">
+    ☰
+</button>
         <ul>
 
             <li>
@@ -1194,7 +1266,22 @@
 
 
         revealOnScroll();
+/* =========================
+   MOBILE MENU
+========================= */
 
+const menuButton =
+    document.getElementById("menuButton");
+
+const navMenu =
+    document.querySelector("nav ul");
+
+
+menuButton.addEventListener("click", function () {
+
+    navMenu.classList.toggle("show");
+
+});
 
     </script>
 
