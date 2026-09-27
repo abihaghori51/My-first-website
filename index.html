@@ -1023,6 +1023,10 @@
    SOCIAL MEDIA BUTTONS
 ========================= */
 
+/* =========================
+   SOCIAL MEDIA BUTTONS
+========================= */
+
 .social-links {
     max-width: 650px;
     margin: 30px auto 0;
@@ -1030,47 +1034,91 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
 }
 
 .social-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
 
-    padding: 11px 18px;
+    padding: 12px 20px;
 
-    background: #f1ece3;
-    color: #5d4936;
+    background: #ffffff;
+    color: #4a4037;
 
     border: 1px solid #ded5c8;
-    border-radius: 25px;
+    border-radius: 30px;
 
     text-decoration: none;
     font-weight: 600;
 
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    border-radius: 7px;
 }
 
 .social-btn:hover {
-    transform: translateY(-4px);
-
-    background: #8a6a4a;
-    color: white;
+    transform: translateY(-5px);
 
     box-shadow:
-        0 8px 20px rgba(80, 60, 40, 0.2);
+        0 10px 25px rgba(60, 45, 30, 0.18);
+}
+
+/* Instagram */
+
+.instagram:hover {
+    color: #c13584;
+    border-color: #c13584;
+}
+
+/* YouTube */
+
+.youtube:hover {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+/* TikTok */
+
+.tiktok:hover {
+    color: #111111;
+    border-color: #111111;
 }
 
 /* Dark Mode */
 
 body.dark .social-btn {
-    background: #302923;
-    border-color: #4a3e34;
+    background: #29231f;
+    border-color: #4a4034;
     color: #ead8c2;
 }
 
-body.dark .social-btn:hover {
-    background: #8a6a4a;
-    color: white;
+body.dark .instagram:hover {
+    color: #e1306c;
+    border-color: #e1306c;
+}
+
+body.dark .youtube:hover {
+    color: #ff4b4b;
+    border-color: #ff4b4b;
+}
+
+body.dark .tiktok:hover {
+    color: #ffffff;
+    border-color: #ffffff;
 }
     </style>
 
